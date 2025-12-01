@@ -1,0 +1,210 @@
+/* src/app.css */
+
+/* --- Variables & Theme Definition --- */
+:root {
+  /* Brand Colors */
+  --brand-blue: #102C54;
+  --brand-orange: #FFAE42;
+  
+  /* Light Mode Defaults */
+  --primary-bg: #f4f7fa;
+  --glass-bg: rgba(255, 255, 255, 0.75);
+  --glass-border: rgba(255, 255, 255, 0.8);
+  --glass-shadow: 0 8px 32px 0 rgba(16, 44, 84, 0.1);
+  
+  --color-text-main: #102C54; /* Pearl Night Blue */
+  --color-text-muted: #546e7a;
+  --color-accent: #FFAE42;    /* Yellow Orange */
+  --color-accent-hover: #ffbf66;
+  
+  --input-bg: rgba(255, 255, 255, 0.9);
+  
+  /* Animated Blob Colors (Light) */
+  --blob-color-1: rgba(255, 174, 66, 0.4); /* Orange tint */
+  --blob-color-2: rgba(16, 44, 84, 0.2);   /* Blue tint */
+
+  --radius-lg: 24px;
+  --radius-pill: 50px;
+  
+  --bs-body-bg: var(--primary-bg);
+  --bs-body-color: var(--color-text-main);
+  --bs-font-monospace: 'SFMono-Regular', Menlo, Monaco, Consolas, monospace;
+}
+
+/* --- Dark Mode Overrides --- */
+[data-bs-theme="dark"] {
+  --primary-bg: #0b1a33; /* Deep version of Pearl Night Blue */
+  --glass-bg: rgba(16, 44, 84, 0.6); /* Dark Blue Glass */
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+  
+  --color-text-main: #e2e8f0;
+  --color-text-muted: #94a3b8;
+  --color-accent: #FFAE42;
+  --color-accent-hover: #ffc978;
+  
+  --input-bg: rgba(11, 26, 51, 0.6);
+  
+  /* Animated Blob Colors (Dark) */
+  --blob-color-1: rgba(255, 174, 66, 0.15);
+  --blob-color-2: rgba(0, 0, 0, 0.3);
+}
+
+/* --- Global & Reset --- */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px; /* Offset for sticky nav */
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  overflow-x: hidden;
+  background: var(--primary-bg);
+  color: var(--color-text-main);
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/* --- Animated Background Blobs --- */
+body::before,
+body::after {
+  content: '';
+  position: fixed;
+  width: 70vw;
+  height: 70vw;
+  border-radius: 50%;
+  z-index: -1;
+  filter: blur(80px);
+  opacity: 0.6;
+  animation: floatBlob 25s infinite alternate ease-in-out;
+  transition: background-color 0.5s ease;
+}
+
+body::before {
+  background: var(--blob-color-1);
+  top: -20%;
+  left: -20%;
+}
+
+body::after {
+  background: var(--blob-color-2);
+  bottom: -20%;
+  right: -20%;
+  animation-delay: -10s;
+}
+
+@keyframes floatBlob {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(60px, 40px) scale(1.1); }
+}
+
+main {
+  flex: 1;
+  position: relative;
+  z-index: 1;
+  margin-top: 80px; /* Space for fixed nav */
+}
+
+/* --- Glassmorphism Utilities --- */
+.glass, .glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  color: var(--color-text-main);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.glass-card {
+  border-radius: var(--radius-lg);
+}
+
+.glass-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  border-color: var(--color-accent);
+}
+
+/* --- Typography --- */
+h1, h2, h3, h4, h5 {
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  color: var(--color-text-main);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, var(--color-text-main), var(--color-accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-accent);
+  transition: color 0.2s;
+}
+a:hover { color: var(--color-accent-hover); }
+
+/* --- Inputs & Editors --- */
+.editor-container {
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background-color: var(--input-bg);
+}
+
+/* --- Buttons --- */
+button, .btn {
+  border-radius: var(--radius-pill) !important;
+  transition: all 0.3s ease !important;
+  font-weight: 600;
+}
+
+.btn-primary {
+  background-color: var(--color-text-main) !important; /* Blue buttons */
+  border-color: var(--color-text-main) !important;
+  color: white !important;
+}
+
+.btn-primary:hover {
+  background-color: #1a3e70 !important;
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(16, 44, 84, 0.3);
+}
+
+.btn-outline-secondary {
+  border-color: var(--glass-border);
+  color: var(--color-text-main);
+}
+.btn-outline-secondary:hover {
+  background-color: var(--glass-border);
+  color: var(--color-text-main);
+}
+
+/* --- Table Styling (Glass Compatible) --- */
+.table {
+  --bs-table-bg: transparent;
+  --bs-table-color: var(--color-text-main);
+}
+.table thead th {
+  border-bottom: 2px solid var(--color-accent);
+  color: var(--color-text-main);
+}
+.table td, .table th {
+  border-color: var(--glass-border);
+}
+.table-hover tbody tr:hover {
+  background-color: rgba(255, 174, 66, 0.1) !important; /* Soft orange hover */
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: var(--color-accent);
+  border-radius: 10px;
+  border: 2px solid var(--primary-bg);
+}

@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>AxelBase – CSS Specificity Refactor</title>
+        <link rel="icon" href="../../../AxelLab-Logo.ico" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="Free online tool to suggest lower specificity CSS selector specificity and remove unnecessary nesting or IDs" />
+        
+        <link rel="stylesheet"
+              href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+              integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+              crossorigin="anonymous">
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+        
+		<link href="../../../_app/immutable/assets/0.B4MtEXvC.css" rel="stylesheet">
+		<link href="../../../_app/immutable/assets/5.Dng0eIYu.css" rel="stylesheet">
+		<link rel="modulepreload" href="../../../_app/immutable/entry/start.H8Dex9cK.js">
+		<link rel="modulepreload" href="../../../_app/immutable/chunks/bNQJ3dmJ.js">
+		<link rel="modulepreload" href="../../../_app/immutable/chunks/CnXXBi7t.js">
+		<link rel="modulepreload" href="../../../_app/immutable/chunks/C0adY5uv.js">
+		<link rel="modulepreload" href="../../../_app/immutable/chunks/D1nSMilh.js">
+		<link rel="modulepreload" href="../../../_app/immutable/chunks/CTOeNQLV.js">
+		<link rel="modulepreload" href="../../../_app/immutable/entry/app.Dr-j2pYF.js">
+		<link rel="modulepreload" href="../../../_app/immutable/chunks/Az-a4Y8t.js">
+		<link rel="modulepreload" href="../../../_app/immutable/chunks/BxmyPRf1.js">
+		<link rel="modulepreload" href="../../../_app/immutable/chunks/WKEoO-R7.js">
+		<link rel="modulepreload" href="../../../_app/immutable/chunks/DUOhS_qE.js">
+		<link rel="modulepreload" href="../../../_app/immutable/nodes/0.f6xVKoBd.js">
+		<link rel="modulepreload" href="../../../_app/immutable/chunks/BXrivV9W.js">
+		<link rel="modulepreload" href="../../../_app/immutable/chunks/3cJGA7mN.js">
+		<link rel="modulepreload" href="../../../_app/immutable/chunks/DAZecabI.js">
+		<link rel="modulepreload" href="../../../_app/immutable/chunks/DFcJXwng.js">
+		<link rel="modulepreload" href="../../../_app/immutable/chunks/DIljoNzS.js">
+		<link rel="modulepreload" href="../../../_app/immutable/nodes/5.CzElVP_1.js">
+		<link rel="modulepreload" href="../../../_app/immutable/chunks/D3fKxdlc.js"><!--1tq17n3--><meta name="description" content="Discover how overly specific selectors create unmaintainable stylesheets and make future changes painful. Learn the real cost of high specificity in real projects."/> <meta property="og:title" content="Why High Specificity Is Killing Your CSS"/> <meta property="og:description" content="Discover how overly specific selectors create unmaintainable stylesheets and make future changes painful."/> <meta property="og:url" content="../../../blog/posts/post1"/> <meta property="og:type" content="article"/> <meta name="twitter:card" content="summary_large_image"/><!----><title>Why High Specificity Is Killing Your CSS | Blog</title>
+    </head>
+    <body data-bs-theme="light" data-sveltekit-preload-data="hover">
+        <div style="display: contents"><!--[--><!--[--><!----><header class="fixed-top p-3 w-100" style="pointer-events: none; z-index: 1040;"><nav class="container glass rounded-pill px-4 py-2 d-flex justify-content-between align-items-center shadow-sm" style="pointer-events: auto;"><div class="d-flex align-items-center gap-4"><a href="../../../" class="d-flex align-items-center gap-2 text-decoration-none logo-group"><img src="../../../AxelLab-Logo.ico" alt="Logo" class="navbar-brand-logo svelte-12qhfyh"/> <span class="fw-bold fs-5 tracking-tight brand-text svelte-12qhfyh">AxelBase</span></a> <ul class="d-none d-lg-flex list-unstyled m-0 gap-1"><li><a class="nav-link-custom svelte-12qhfyh" href="../../../">Home</a></li> <li><a class="nav-link-custom svelte-12qhfyh" href="../../../#about">About</a></li> <li><a class="nav-link-custom svelte-12qhfyh" href="../../../#how-to">How to use</a></li> <li><a class="nav-link-custom svelte-12qhfyh" href="../../../#faq">FAQ</a></li> <li><a class="nav-link-custom svelte-12qhfyh" href="../../../blog">Blog</a></li></ul></div> <div class="d-flex align-items-center gap-3"><button class="btn btn-outline-secondary btn-sm p-2 rounded-circle" aria-label="Toggle Dark Mode"><i class="bi bi-moon-stars-fill"></i></button> <div class="position-relative"><button class="btn btn-coffee d-flex align-items-center gap-2 svelte-12qhfyh"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="coffee-icon svelte-12qhfyh"><path d="M12.35,22.2L12,22A10,10,0,0,1,2,12V10A2,2,0,0,1,4,8H7.2A5.13,5.13,0,0,1,12,3A5.13,5.13,0,0,1,16.8,8H20A2,2,0,0,1,22,10V12A10,10,0,0,1,12.35,22.2M4,10V12A8,8,0,0,0,12,20A8,8,0,0,0,20,12V10H16.8A5.11,5.11,0,0,1,12.5,5.12A5.15,5.15,0,0,1,7.2,10H4Z"></path></svg> <span class="d-none d-sm-inline">Coffee</span></button> <!--[!--><!--]--></div></div></nav></header> <!--[--><!----><div class="container fade-in post-layout svelte-1tq17n3"><div class="breadcrumbs svelte-1tq17n3"><a href="../../../blog" class="svelte-1tq17n3">Blog</a> <span>/</span> <p class="svelte-1tq17n3">Why High Specificity Is Killing Your CSS</p></div> <article class="prose svelte-1tq17n3"><h1 class="svelte-1tq17n3">Why High Specificity Is Killing Your CSS</h1> <p class="post-meta svelte-1tq17n3">Published: December 1, 2025 • 6 min read</p> <p class="svelte-1tq17n3">Every developer has been there. You need to change the color of a button, and suddenly you’re writing even longer selectors or reaching for the dreaded !important just to make something work. The root cause? High specificity.</p> <p class="svelte-1tq17n3">When you write selectors like #header .nav ul li a or body.home .main-content .card .title, you’re not just targeting an element — you’re locking it down. These selectors have extremely high priority in the cascade, which means almost nothing can override them without fighting back with even more specificity.</p> <h2 class="svelte-1tq17n3">The Real-World Consequences</h2> <p class="svelte-1tq17n3">In large teams or long-lived projects, high specificity creates a cascade arms race. One developer uses an ID to style a button. Another can’t override it with a class, so they add another ID. Soon, every style change requires finding and updating multiple deeply nested selectors scattered across files.</p> <p class="svelte-1tq17n3">Worse, it breaks reusability. A beautifully styled component that works perfectly on the homepage — but when moved to a sidebar, it refuses to adapt because its original selector was too specific to the context.</p> <h2 class="svelte-1tq17n3">The Hidden Performance Cost</h2> <p class="svelte-1tq17n3">While not dramatic, highly specific selectors are slower for browsers to match. More importantly, they prevent modern optimization techniques like CSS containment and style sharing between components.</p> <p class="svelte-1tq17n3">The worst offender is the ID selector. With a specificity of 1,0,0,0, it beats almost everything except inline styles and !important. This single choice often forces entire teams into bad patterns for years.</p> <h2 class="svelte-1tq17n3">Breaking the Cycle</h2> <p class="svelte-1tq17n3">The solution starts with awareness. By understanding how specificity actually works — and seeing it measured in real time — developers naturally begin writing simpler, more flexible selectors.</p> <p class="svelte-1tq17n3">Tools that highlight high-specificity patterns make the problem visible. When you can see that a simple .button has become #page .content .card .button-primary, the need for change becomes obvious.</p> <p class="svelte-1tq17n3">Lower specificity doesn’t mean less power. It means more control, better maintainability, and styles that naturally flow with the cascade instead of fighting against it.</p> <p class="italic-note svelte-1tq17n3">Your future self — and every developer who touches your code — will thank you for choosing simplicity over precision.</p></article></div><!----><!--]--> <footer class="glass border-top py-3 mt-auto position-relative" style="z-index: 10;"><div class="container d-flex justify-content-between align-items-center small flex-wrap"><div class="text-muted">© 2025 AxelBase Refactor Tool</div> <div class="d-flex gap-3"><a href="../../../privacy" class="footer-link svelte-12qhfyh">Privacy</a> <a href="../../../terms" class="footer-link svelte-12qhfyh">Terms</a></div></div></footer><!----><!--]--> <!--[!--><!--]--><!--]-->
+			
+			<script>
+				{
+					__sveltekit_1kuufyo = {
+						base: new URL("../../..", location).pathname.slice(0, -1),
+						assets: "/css-specificity-refactor"
+					};
+
+					const element = document.currentScript.parentElement;
+
+					Promise.all([
+						import("../../../_app/immutable/entry/start.H8Dex9cK.js"),
+						import("../../../_app/immutable/entry/app.Dr-j2pYF.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 5],
+							data: [null,null],
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		</div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+                crossorigin="anonymous"></script>
+    </body>
+</html>

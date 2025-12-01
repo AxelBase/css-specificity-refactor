@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>AxelBase – CSS Specificity Refactor</title>
+        <link rel="icon" href="../../../AxelLab-Logo.ico" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="Free online tool to suggest lower specificity CSS selector specificity and remove unnecessary nesting or IDs" />
+        
+        <link rel="stylesheet"
+              href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+              integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+              crossorigin="anonymous">
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+        
+		<link href="../../../_app/immutable/assets/0.B4MtEXvC.css" rel="stylesheet">
+		<link href="../../../_app/immutable/assets/10.Zh6PEcKR.css" rel="stylesheet">
+		<link rel="modulepreload" href="../../../_app/immutable/entry/start.H8Dex9cK.js">
+		<link rel="modulepreload" href="../../../_app/immutable/chunks/bNQJ3dmJ.js">
+		<link rel="modulepreload" href="../../../_app/immutable/chunks/CnXXBi7t.js">
+		<link rel="modulepreload" href="../../../_app/immutable/chunks/C0adY5uv.js">
+		<link rel="modulepreload" href="../../../_app/immutable/chunks/D1nSMilh.js">
+		<link rel="modulepreload" href="../../../_app/immutable/chunks/CTOeNQLV.js">
+		<link rel="modulepreload" href="../../../_app/immutable/entry/app.Dr-j2pYF.js">
+		<link rel="modulepreload" href="../../../_app/immutable/chunks/Az-a4Y8t.js">
+		<link rel="modulepreload" href="../../../_app/immutable/chunks/BxmyPRf1.js">
+		<link rel="modulepreload" href="../../../_app/immutable/chunks/WKEoO-R7.js">
+		<link rel="modulepreload" href="../../../_app/immutable/chunks/DUOhS_qE.js">
+		<link rel="modulepreload" href="../../../_app/immutable/nodes/0.f6xVKoBd.js">
+		<link rel="modulepreload" href="../../../_app/immutable/chunks/BXrivV9W.js">
+		<link rel="modulepreload" href="../../../_app/immutable/chunks/3cJGA7mN.js">
+		<link rel="modulepreload" href="../../../_app/immutable/chunks/DAZecabI.js">
+		<link rel="modulepreload" href="../../../_app/immutable/chunks/DFcJXwng.js">
+		<link rel="modulepreload" href="../../../_app/immutable/chunks/DIljoNzS.js">
+		<link rel="modulepreload" href="../../../_app/immutable/nodes/10.CcVqYhXA.js">
+		<link rel="modulepreload" href="../../../_app/immutable/chunks/D3fKxdlc.js"><!--q8x3kg--><meta name="description" content="Proven, safe method to modernize old, high-specificity CSS without breaking existing designs or causing visual regressions."/> <meta property="og:title" content="Refactoring Legacy CSS: Step-by-Step"/> <meta property="og:description" content="How to safely reduce specificity in large, old codebases."/> <meta property="og:url" content="../../../blog/posts/post6"/> <meta property="og:type" content="article"/> <meta name="twitter:card" content="summary_large_image"/><!----><title>Refactoring Legacy CSS: A Step-by-Step Strategy | Blog</title>
+    </head>
+    <body data-bs-theme="light" data-sveltekit-preload-data="hover">
+        <div style="display: contents"><!--[--><!--[--><!----><header class="fixed-top p-3 w-100" style="pointer-events: none; z-index: 1040;"><nav class="container glass rounded-pill px-4 py-2 d-flex justify-content-between align-items-center shadow-sm" style="pointer-events: auto;"><div class="d-flex align-items-center gap-4"><a href="../../../" class="d-flex align-items-center gap-2 text-decoration-none logo-group"><img src="../../../AxelLab-Logo.ico" alt="Logo" class="navbar-brand-logo svelte-12qhfyh"/> <span class="fw-bold fs-5 tracking-tight brand-text svelte-12qhfyh">AxelBase</span></a> <ul class="d-none d-lg-flex list-unstyled m-0 gap-1"><li><a class="nav-link-custom svelte-12qhfyh" href="../../../">Home</a></li> <li><a class="nav-link-custom svelte-12qhfyh" href="../../../#about">About</a></li> <li><a class="nav-link-custom svelte-12qhfyh" href="../../../#how-to">How to use</a></li> <li><a class="nav-link-custom svelte-12qhfyh" href="../../../#faq">FAQ</a></li> <li><a class="nav-link-custom svelte-12qhfyh" href="../../../blog">Blog</a></li></ul></div> <div class="d-flex align-items-center gap-3"><button class="btn btn-outline-secondary btn-sm p-2 rounded-circle" aria-label="Toggle Dark Mode"><i class="bi bi-moon-stars-fill"></i></button> <div class="position-relative"><button class="btn btn-coffee d-flex align-items-center gap-2 svelte-12qhfyh"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="coffee-icon svelte-12qhfyh"><path d="M12.35,22.2L12,22A10,10,0,0,1,2,12V10A2,2,0,0,1,4,8H7.2A5.13,5.13,0,0,1,12,3A5.13,5.13,0,0,1,16.8,8H20A2,2,0,0,1,22,10V12A10,10,0,0,1,12.35,22.2M4,10V12A8,8,0,0,0,12,20A8,8,0,0,0,20,12V10H16.8A5.11,5.11,0,0,1,12.5,5.12A5.15,5.15,0,0,1,7.2,10H4Z"></path></svg> <span class="d-none d-sm-inline">Coffee</span></button> <!--[!--><!--]--></div></div></nav></header> <!--[--><!----><div class="container fade-in post-layout svelte-q8x3kg"><div class="breadcrumbs svelte-q8x3kg"><a href="../../../blog" class="svelte-q8x3kg">Blog</a> <span>/</span> <p class="svelte-q8x3kg">Refactoring Legacy CSS: A Step-by-Step Strategy</p></div> <article class="prose svelte-q8x3kg"><h1 class="svelte-q8x3kg">Refactoring Legacy CSS: A Step-by-Step Strategy</h1> <p class="post-meta svelte-q8x3kg">Published: December 11, 2025 • 7 min read</p> <p class="svelte-q8x3kg">Inheriting a ten-year-old stylesheet full of ID selectors and !important declarations feels like defusing a bomb. One wrong move and everything explodes. But it is possible to modernize even the worst legacy CSS — safely and gradually.</p> <p class="svelte-q8x3kg">The key is measurement and incremental improvement. You don’t need to rewrite everything at once. You need a process that reduces risk while delivering value immediately.</p> <h2 class="svelte-q8x3kg">Step 1: Audit with Data</h2> <p class="svelte-q8x3kg">Start by running your CSS through a specificity analyzer. Identify the worst offenders: selectors with IDs, long chains, and !important usage. This gives you objective data instead of guesses.</p> <p class="svelte-q8x3kg">Sort by specificity score and focus on the top twenty worst selectors. These are usually responsible for eighty percent of your pain.</p> <h2 class="svelte-q8x3kg">Step 2: Isolate and Replace</h2> <p class="svelte-q8x3kg">For each high-specificity selector, create a new class-based version. Keep the old selector but add a new class like .btn-legacy alongside it. Update the HTML to use the new class and remove the old selector dependency one component at a time.</p> <p class="svelte-q8x3kg">This approach means both old and new styles coexist peacefully during transition.</p> <h2 class="svelte-q8x3kg">Step 3: Use :is() and :where() as Bridges</h2> <p class="svelte-q8x3kg">When you can’t immediately change HTML, use these pseudo-classes to reduce specificity without breaking anything. Replace #header .nav a with :where(#header, .new-header) .nav-link and gradually migrate.</p> <h2 class="svelte-q8x3kg">Step 4: Remove Dead Weight</h2> <p class="svelte-q8x3kg">Once coverage tools confirm the old selectors are unused, delete them. Your specificity score drops, maintainability improves, and bundle size shrinks.</p> <p class="svelte-q8x3kg">Repeat weekly. Over months, even massive legacy codebases become clean, modular, and maintainable — without ever having a breaking release.</p> <p class="italic-note svelte-q8x3kg">The best refactorings are invisible to users and gradual for developers.</p></article></div><!----><!--]--> <footer class="glass border-top py-3 mt-auto position-relative" style="z-index: 10;"><div class="container d-flex justify-content-between align-items-center small flex-wrap"><div class="text-muted">© 2025 AxelBase Refactor Tool</div> <div class="d-flex gap-3"><a href="../../../privacy" class="footer-link svelte-12qhfyh">Privacy</a> <a href="../../../terms" class="footer-link svelte-12qhfyh">Terms</a></div></div></footer><!----><!--]--> <!--[!--><!--]--><!--]-->
+			
+			<script>
+				{
+					__sveltekit_1kuufyo = {
+						base: new URL("../../..", location).pathname.slice(0, -1),
+						assets: "/css-specificity-refactor"
+					};
+
+					const element = document.currentScript.parentElement;
+
+					Promise.all([
+						import("../../../_app/immutable/entry/start.H8Dex9cK.js"),
+						import("../../../_app/immutable/entry/app.Dr-j2pYF.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 10],
+							data: [null,null],
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		</div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+                crossorigin="anonymous"></script>
+    </body>
+</html>

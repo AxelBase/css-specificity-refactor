@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://axelbase.github.io/css-specificity-refactor/sitemap.xml
+Sitemap: https://css-specificity-refactor.vercel.app/sitemap.xml
